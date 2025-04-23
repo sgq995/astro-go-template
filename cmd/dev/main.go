@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
@@ -27,5 +28,6 @@ func main() {
 		Handler: mux,
 	}
 
+	log.Printf("Starting server at %s", s.Addr)
 	s.ListenAndServe()
 }
