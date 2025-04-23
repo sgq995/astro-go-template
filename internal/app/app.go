@@ -1,15 +1,22 @@
 package app
 
-import "net/http"
+import (
+	"io/fs"
+	"net/http"
+)
 
 type App struct {
 	*http.ServeMux
+
+	fs fs.FS
 }
 
 func New() *App {
 	mux := http.NewServeMux()
 
-	// TODO: register routes
-
 	return &App{ServeMux: mux}
+}
+
+func (app *App) Init() error {
+	return nil
 }

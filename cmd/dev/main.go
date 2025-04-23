@@ -12,8 +12,8 @@ import (
 func main() {
 	app := app.New()
 	proxy := httputil.NewSingleHostReverseProxy(&url.URL{Scheme: "http", Host: "localhost:4321"})
-	mux := http.NewServeMux()
 
+	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		_, pattern := app.Handler(r)
 		if pattern == "" {
@@ -22,6 +22,11 @@ func main() {
 			app.ServeHTTP(w, r)
 		}
 	})
+
+	err := app.Init()
+	if err != nil {
+		panic(err)
+	}
 
 	s := http.Server{
 		Addr:    "localhost:8080",
