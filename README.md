@@ -1,14 +1,8 @@
-# Astro Starter Kit: Minimal
+# Astro + Golang Starter Kit: Minimal
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm create astro@latest -- --template sgq995/astro-go-template
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ## 🚀 Project Structure
 
@@ -16,10 +10,14 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
+├── cmd/
+├── integrations/
+├── internal/
 ├── public/
 ├── src/
 │   └── pages/
 │       └── index.astro
+├── .air.toml
 └── package.json
 ```
 
@@ -36,7 +34,7 @@ All commands are run from the root of the project, from a terminal:
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm dev`             | Starts local dev server at `localhost:8080` (Astro + [Air](https://github.com/air-verse/air))      |
 | `pnpm build`           | Build your production site to `./dist/`          |
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
