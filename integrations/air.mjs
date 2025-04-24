@@ -12,7 +12,13 @@ export default function air() {
         });
         proc.on('error', console.error);
       },
-      'astro:build:done': () => {},
+      'astro:build:done': () => {
+        const proc = spawn('go', ['run', 'cmd/build/main.go'], {
+          stdio: 'inherit',
+          shell: true,
+        });
+        proc.on('error', console.error);
+      },
     },
   };
 }
